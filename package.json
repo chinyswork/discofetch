@@ -52,6 +52,7 @@
     "build": "obuild",
     "test": "vitest",
     "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "dev:nuxt": "bun --filter=nuxt-example dev"
   },
   "peerDependencies": {
