@@ -1,9 +1,23 @@
 # 🪩 Discofetch
 
+[![Github Actions][github-actions-src]][github-actions-href]
+[![NPM version][npm-version-src]][npm-version-href]
+[![NPM last update][npm-last-update-src]][npm-last-update-href]
+[![License][license-src]][license-href]
+
+Use legacy APIs with confidence.
+
 Discofetch is a fetch client that automatically discovers and generates types
 for your API requests by probing the endpoints and analyzing the responses.
 
 ## Usage
+
+Discofetch is built on top of [autodisco](https://github.com/freb97/autodisco), which
+uses zod, zod-openapi and openapi-typescript to generate types from the API responses.
+
+From these types, the module creates a fetch client that provides type-safe methods
+for making requests to the API using [openapi-fetch](https://github.com/openapi-ts/openapi-typescript/tree/main/packages/openapi-fetch).
+Currently only Nuxt is supported.
 
 ### Nuxt
 
@@ -34,6 +48,10 @@ export default defineNuxtConfig({
           params: { id: 3 },
         }
       },
+    },
+
+    hooks: {
+      'probes:completed': config => console.log(config),
     },
   },
 })
