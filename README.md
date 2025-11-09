@@ -107,8 +107,6 @@ const { data: todo } = await dfetch.GET('/todos/{id}', {
   },
 })
 
-console.log(todo.title) // ✅ Fully typed!
-
 // GET request with query parameters
 const { data: comments } = await dfetch.GET('/comments', {
   params: {
@@ -124,6 +122,12 @@ const { data: newTodo } = await dfetch.POST('/todos', {
     userId: 1,
   },
 })
+
+// You can also access the generated TypeScript types directly
+type Todos = DfetchComponents['schemas']['Todos']
+type Body = DfetchPaths['/todos']['post']['requestBody']
+
+console.log(todo.title) // Fully typed!
 </script>
 ```
 
