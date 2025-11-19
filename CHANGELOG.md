@@ -1,3 +1,6 @@
+# 0.1.1
+- Upgraded to autodisco 0.4
+
 # 0.1.0
 - Upgraded to autodisco 0.3
 
