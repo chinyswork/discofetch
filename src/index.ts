@@ -16,4 +16,4 @@ export function runDiscovery(config: DiscoverConfig) {
   })
 }
 
-export type { Config, Paths, RuntimeConfig } from './types/index.d'
+export type { Config, Paths, RuntimeConfig } from './types'

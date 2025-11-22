@@ -1,4 +1,4 @@
-import type { RuntimeConfig } from '../types/index.d'
+import type { RuntimeConfig } from '../types/index'
 
 export function augmentClient(config: RuntimeConfig) {
   return `

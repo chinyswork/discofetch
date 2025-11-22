@@ -53,7 +53,8 @@
     "test": "vitest",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "dev:nuxt": "bun --filter=nuxt-example dev"
+    "dev:nuxt": "bun --filter=nuxt-example run dev",
+    "build:nuxt": "bun --filter=nuxt-example run build"
   },
   "peerDependencies": {
     "@nuxt/kit": "^4.2.0",

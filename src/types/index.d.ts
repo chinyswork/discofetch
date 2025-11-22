@@ -7,6 +7,9 @@ export interface Config extends Omit<DiscoverConfig, 'outputDir' | 'generate'> {
     typescript?: OpenAPITSOptions
   }
 
+  /**
+   * If true, the created fetch client will not be accessible in the client bundle. (server-side only)
+   */
   private?: boolean
 }
 

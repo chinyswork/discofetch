@@ -1,11 +1,15 @@
 <script setup lang="ts">
-const { data } = await dfetch.GET('/posts/{id}', {
+const { data, error } = await dfetch.GET('/posts/{id}', {
   params: {
     path: {
       id: 1,
     },
   },
 })
+
+if (error) {
+  throw createError(error)
+}
 </script>
 
 <template>
