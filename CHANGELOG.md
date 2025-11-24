@@ -1,3 +1,6 @@
+# 0.2.0
+- Refactored Nuxt module
+
 # 0.1.1
 - Upgraded to autodisco 0.4
 
