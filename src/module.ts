@@ -21,15 +21,28 @@ export default defineNuxtModule<ModuleOptions>({
   },
 
   setup: async (options, nuxt) => {
+    const resolver = createResolver(import.meta.url)
     const logger = useLogger('discofetch')
+
+    const clientSource = resolver.resolve('../src/client/index.d.ts')
+
+    if (await stat(clientSource).catch(() => false)) {
+      logger.info('Source files detected, enabling module aliases for development mode.')
+
+      nuxt.options.alias = nuxt.options.alias ??= {}
+      nuxt.options.alias['discofetch/client'] = clientSource
+
+      nuxt.options.nitro.typescript ??= {}
+      nuxt.options.nitro.typescript.tsConfig ??= {}
+      nuxt.options.nitro.typescript.tsConfig.include ??= []
+      nuxt.options.nitro.typescript.tsConfig.include.push(clientSource)
+    }
 
     if (!options.probes) {
       logger.info('No options provided, skipping auto-discovery.')
 
       return
     }
-
-    const resolver = createResolver(import.meta.url)
 
     const outputDir = `${nuxt.options.buildDir}/discofetch`
 
@@ -87,16 +100,6 @@ export default defineNuxtModule<ModuleOptions>({
 
       nuxt.options.typescript.tsConfig.include ??= []
       nuxt.options.typescript.tsConfig.include.push(outputDir)
-    }
-
-    const clientSource = resolver.resolve('../src/client/index.d.ts')
-
-    if (await stat(clientSource).catch(() => false)) {
-      logger.info('Source files detected, enabling module aliases for development mode.')
-
-      nuxt.options.alias = nuxt.options.alias ??= {}
-      nuxt.options.alias['discofetch/client'] = clientSource
-      nuxt.options.nitro.typescript.tsConfig.include.push(clientSource)
     }
   },
 })
