@@ -1,7 +1,9 @@
 import type { DiscoverConfig } from 'autodisco'
 
+import { stat } from 'node:fs/promises'
 import { addImports, addServerImports, addTemplate, createResolver, defineNuxtModule, updateRuntimeConfig, useLogger } from '@nuxt/kit'
 import discover from 'autodisco'
+
 import { getRuntimeConfig } from './config/runtime'
 import { augmentClient } from './templates/augment'
 
@@ -85,6 +87,16 @@ export default defineNuxtModule<ModuleOptions>({
 
       nuxt.options.typescript.tsConfig.include ??= []
       nuxt.options.typescript.tsConfig.include.push(outputDir)
+    }
+
+    const clientSource = resolver.resolve('../src/client/index.d.ts')
+
+    if (await stat(clientSource).catch(() => false)) {
+      logger.info('Source files detected, enabling module aliases for development mode.')
+
+      nuxt.options.alias = nuxt.options.alias ??= {}
+      nuxt.options.alias['discofetch/client'] = clientSource
+      nuxt.options.nitro.typescript.tsConfig.include.push(clientSource)
     }
   },
 })

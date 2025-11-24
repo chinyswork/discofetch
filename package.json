@@ -50,8 +50,9 @@
     "prepare": "nuxt-module-build prepare",
     "test": "vitest",
     "lint": "eslint .",
-    "dev:nuxt": "bun --filter=nuxt-example run dev",
-    "build:nuxt": "bun --filter=nuxt-example run build",
+    "nuxt:prepare": "bun --filter=nuxt-example run prepare",
+    "nuxt:dev": "bun --filter=nuxt-example run dev",
+    "nuxt:build": "bun --filter=nuxt-example run build",
     "typecheck": "vue-tsc --noEmit"
   },
   "peerDependencies": {
